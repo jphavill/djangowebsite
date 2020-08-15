@@ -1,0 +1,22 @@
+{% extends "codetutorials/base.html" %}
+{% block content %}
+  <h1>Best Articles</h1>
+  <p>Whether you are looking to jump into a new topic or are an experienced student searching for more niche topics,
+    these articles will be a great starting point.</p>
+  <div class="pythonarticles">
+    <div id="beginnerpython">
+      <h2>Beginner Python</h2>
+      <nav>
+        <a href="{% url 'tut:tut-if-Else' %}">The If Else Statement</a> <br>
+        <a href="{% url 'tut:tut-tuples' %}">Tuples</a> <br>
+      </nav>
+    </div>
+    <div id="intermediatepython">
+      <h2>Intermediate Python</h2>
+    </div>
+    <div id="advancedpython">
+      <h2>Advanced Python</h2>
+    </div>
+  </div>
+  <nav></nav>
+{% endblock content %}

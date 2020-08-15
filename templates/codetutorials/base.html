@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'codetutorials/css/normalize.css' %}">
+    <link rel="stylesheet" href="{% static 'codetutorials/css/main.css' %}">
+    <link rel="stylesheet" href="{% static 'codetutorials/css/headerfooter.css' %}">
+    <link rel="stylesheet" href="{% static 'codetutorials/css/bestarticles.css' %}">
+    <link rel="stylesheet" href="{% static 'codetutorials/css/homepage.css' %}">
+</head>
+<body>
+<header>
+  <nav class="topnav">
+    <a href="{% url 'main:homepage' %}" id="homepage">JASON HAVILL</a>
+    <div class="mainnav">
+        {% for section, path in sections %}
+            <a href="{% url path %}" id={{ section }}>
+                <span {% if section|lower in request.path|lower or request.path == '/' and section|lower == 'about'%}class="current"{% endif %}>
+                    {{section|upper}}
+                </span>
+            </a>
+        {% endfor %}
+    </div>
+    <hr>
+  </nav>
+</header>
+<main>
+    {% block content %}{% endblock content %}
+</main>
+</body>
+</html>

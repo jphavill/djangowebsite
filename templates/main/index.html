@@ -1,0 +1,16 @@
+{% extends "codetutorials/base.html" %}
+{% block content %}
+<main>
+  <h1>Scuba Images</h1>
+  <p>Some of my favourite images from past dives.</p>
+    {% load static %}
+    <img src="{% static 'images/musicvisFrames/musicvisFrame0.jpg' %}" onclick="advanceImage()" id="musicvisChart">
+</main>
+<script>
+    {% load static %}
+    var musicVisGif = "{% static "images/musicvis.gif" %}";
+    var musicVisFrame0 = "{% static "images/musicvisFrames/musicvisFrame0.jpg" %}"
+</script>
+<script src="{% static 'codetutorials/JS/musicvis.js' %}">
+</script>
+{% endblock content %}
